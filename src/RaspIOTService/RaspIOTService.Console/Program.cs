@@ -1,13 +1,16 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
-using IoTHubServo.Domain;
-using IoTHubServo.Infrastructure;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
+using RaspIOTService.Application;
+using RaspIOTService.Domain;
+using RaspIOTService.Infrastructure;
 
-namespace IoTHubServo
+namespace RaspIOTService.Console
 {
     public static class Program
     {
@@ -15,14 +18,14 @@ namespace IoTHubServo
         {
             var serviceCollection = GetServiceColletion();
             var serviceProvider = serviceCollection.BuildServiceProvider();
-
-            var gpio = serviceProvider.GetService<IGPIOService>();
+            var mediator = serviceProvider.GetService<IMediator>();
 
             for (int i = 0; i < 10; i++)
             {
-                gpio.SendServoHigh();
+                await mediator.Publish(new ServoNotification(true));
                 await Task.Delay(TimeSpan.FromSeconds(2));
-                gpio.SendServoLow();
+
+                await mediator.Publish(new ServoNotification(false));
                 await Task.Delay(TimeSpan.FromSeconds(2));
             }
         }
@@ -41,8 +44,10 @@ namespace IoTHubServo
             serviceCollection.AddOptions();
             serviceCollection.Configure<GpioOptions>(configuration.GetSection("Gpio"));
 
-            serviceCollection.AddTransient<IGPIOService, GPIOService>();
-            //serviceCollection.AddTransient<IGPIOService, FakeGPIOService>();
+            serviceCollection.AddTransient<IGpioService, FakeGpioService>();
+            //serviceCollection.AddTransient<IGpioService, GpioService>();
+
+            serviceCollection.AddMediatR(cfg => cfg.AsScoped(), typeof(ServoNotificationHandler).GetTypeInfo().Assembly);
 
             return serviceCollection;
         }

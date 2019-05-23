@@ -1,8 +1,6 @@
-using System;
-
-namespace IoTHubServo.Domain
+namespace RaspIOTService.Domain
 {
-    public interface IGPIOService
+    public interface IGpioService
     {
         void SendServoHigh();
 

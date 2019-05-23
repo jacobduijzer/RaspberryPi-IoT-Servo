@@ -1,4 +1,4 @@
-namespace IoTHubServo.Domain
+namespace RaspIOTService.Domain
 {
     public class GpioOptions
     {

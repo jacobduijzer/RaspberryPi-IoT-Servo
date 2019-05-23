@@ -1,22 +1,22 @@
 using System.Device.Gpio;
-using System.Threading.Tasks;
-using IoTHubServo.Domain;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using RaspIOTService.Domain;
 
-namespace IoTHubServo.Infrastructure
+namespace RaspIOTService.Infrastructure
 {
-    public class GPIOService : IGPIOService
+    public class GpioService : IGpioService
     {
-        private readonly ILogger<GPIOService> _logger;
+        private readonly IGpioController _gpioController;
         private readonly IOptions<GpioOptions> _gpioOptions;
+        private readonly ILogger<GpioService> _logger;
 
-        private readonly GpioController _gpioController;
-
-        public GPIOService(ILogger<GPIOService> logger, IOptions<GpioOptions> gpioOptions)
+        public GpioService(
+            IOptions<GpioOptions> gpioOptions,
+            ILogger<GpioService> logger)
         {
-            _logger = logger;
             _gpioOptions = gpioOptions;
+            _logger = logger;
 
             _gpioController = new GpioController();
             _gpioController.OpenPin(_gpioOptions.Value.ServoPin, PinMode.Output);
@@ -28,9 +28,9 @@ namespace IoTHubServo.Infrastructure
 
         private void WriteToServo(int servoPin, PinValue pinValue)
         {
-            _logger.LogDebug($"Start writing {pinValue} to pin {servoPin}");
+            _logger.LogTrace($"Writing {pinValue} to pin {servoPin}");
             _gpioController.Write(servoPin, PinValue.Low);
-            _logger.LogDebug($"Finished writing {pinValue} to pin {servoPin}");
+            _logger.LogTrace($"Wrote {pinValue} to pin {servoPin}");
         }
     }
 }

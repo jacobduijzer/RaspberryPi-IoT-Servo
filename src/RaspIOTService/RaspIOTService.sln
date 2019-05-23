@@ -1,0 +1,41 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspIOTService.Console", "RaspIOTService.Console\RaspIOTService.Console.csproj", "{D74C2F67-8A7D-47A5-99D1-746F4640BCDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspIOTService.Application", "RaspIOTService.Application\RaspIOTService.Application.csproj", "{71FFBE49-4842-4233-AEC4-C5BC4517E937}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspIOTService.Domain", "RaspIOTService.Domain\RaspIOTService.Domain.csproj", "{9EF5911B-4FCD-4E59-A7AA-0295410CEF49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspIOTService.Infrastructure", "RaspIOTService.Infrastructure\RaspIOTService.Infrastructure.csproj", "{8B9FFC3F-D5D7-493E-A562-C88835DE7869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspIOTService.UnitTests", "RaspIOTService.UnitTests\RaspIOTService.UnitTests.csproj", "{49310BD0-2710-4B36-BBCF-3DAF33CE30BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D74C2F67-8A7D-47A5-99D1-746F4640BCDF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D74C2F67-8A7D-47A5-99D1-746F4640BCDF}.Debug|x86.Build.0 = Debug|Any CPU
+		{D74C2F67-8A7D-47A5-99D1-746F4640BCDF}.Release|x86.ActiveCfg = Release|Any CPU
+		{D74C2F67-8A7D-47A5-99D1-746F4640BCDF}.Release|x86.Build.0 = Release|Any CPU
+		{71FFBE49-4842-4233-AEC4-C5BC4517E937}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{71FFBE49-4842-4233-AEC4-C5BC4517E937}.Debug|x86.Build.0 = Debug|Any CPU
+		{71FFBE49-4842-4233-AEC4-C5BC4517E937}.Release|x86.ActiveCfg = Release|Any CPU
+		{71FFBE49-4842-4233-AEC4-C5BC4517E937}.Release|x86.Build.0 = Release|Any CPU
+		{9EF5911B-4FCD-4E59-A7AA-0295410CEF49}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9EF5911B-4FCD-4E59-A7AA-0295410CEF49}.Debug|x86.Build.0 = Debug|Any CPU
+		{9EF5911B-4FCD-4E59-A7AA-0295410CEF49}.Release|x86.ActiveCfg = Release|Any CPU
+		{9EF5911B-4FCD-4E59-A7AA-0295410CEF49}.Release|x86.Build.0 = Release|Any CPU
+		{8B9FFC3F-D5D7-493E-A562-C88835DE7869}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8B9FFC3F-D5D7-493E-A562-C88835DE7869}.Debug|x86.Build.0 = Debug|Any CPU
+		{8B9FFC3F-D5D7-493E-A562-C88835DE7869}.Release|x86.ActiveCfg = Release|Any CPU
+		{8B9FFC3F-D5D7-493E-A562-C88835DE7869}.Release|x86.Build.0 = Release|Any CPU
+		{49310BD0-2710-4B36-BBCF-3DAF33CE30BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{49310BD0-2710-4B36-BBCF-3DAF33CE30BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{49310BD0-2710-4B36-BBCF-3DAF33CE30BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{49310BD0-2710-4B36-BBCF-3DAF33CE30BB}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

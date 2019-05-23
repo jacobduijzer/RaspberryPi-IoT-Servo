@@ -3,6 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -14,10 +20,12 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.2.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IoTHubServo.Domain\IoTHubServo.Domain.csproj" />
-    <ProjectReference Include="..\IoTHubServo.Infrastructure\IoTHubServo.Infrastructure.csproj" />
+    <ProjectReference Include="..\RaspIOTService.Application\RaspIOTService.Application.csproj" />
+    <ProjectReference Include="..\RaspIOTService.Infrastructure\RaspIOTService.Infrastructure.csproj" />
+    <ProjectReference Include="..\RaspIOTService.Domain\RaspIOTService.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json">
