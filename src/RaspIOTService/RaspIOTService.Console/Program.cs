@@ -16,7 +16,7 @@ namespace RaspIOTService.Console
     {
         private static async Task Main(string[] args)
         {
-            var serviceCollection = GetServiceColletion();
+            var serviceCollection = GetServiceCollection();
             var serviceProvider = serviceCollection.BuildServiceProvider();
             var mediator = serviceProvider.GetService<IMediator>();
 
@@ -30,7 +30,7 @@ namespace RaspIOTService.Console
             }
         }
 
-        private static IServiceCollection GetServiceColletion()
+        private static IServiceCollection GetServiceCollection()
         {
             var serviceCollection = new ServiceCollection();
 
