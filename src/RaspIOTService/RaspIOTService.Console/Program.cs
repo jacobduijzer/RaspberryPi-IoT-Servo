@@ -16,7 +16,7 @@ namespace RaspIOTService.Console
     {
         private static async Task Main(string[] args)
         {
-            var serviceCollection = GetServiceColletion();
+            var serviceCollection = GetServiceCollection();
             var serviceProvider = serviceCollection.BuildServiceProvider();
             var mediator = serviceProvider.GetService<IMediator>();
 
