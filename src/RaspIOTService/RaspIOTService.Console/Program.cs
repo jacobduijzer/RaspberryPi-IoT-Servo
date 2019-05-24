@@ -30,7 +30,7 @@ namespace RaspIOTService.Console
             }
         }
 
-        private static IServiceCollection GetServiceColletion()
+        private static IServiceCollection GetServiceCollection()
         {
             var serviceCollection = new ServiceCollection();
 
